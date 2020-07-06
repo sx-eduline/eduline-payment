@@ -1,6 +1,6 @@
 {
     "name": "eduline/eduline-payment",
-    "description": "eduline-v5 payment pay",
+    "description": "eduline-v5 第三方支付",
     "require": {
         "php": ">=7.1.0",
         "yansongda/pay": "^2.0"
