@@ -19,5 +19,10 @@
             "type": "composer",
             "url": "https://mirrors.aliyun.com/composer/"
         }
+    },
+    "autoload": {
+        "psr-4": {
+            "eduline\\payment\\": "src/"
+        }
     }
 }
