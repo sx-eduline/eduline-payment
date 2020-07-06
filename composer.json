@@ -1,0 +1,22 @@
+{
+    "name": "eduline/eduline-payment",
+    "description": "eduline-v5 payment pay",
+    "require": {
+        "yansongda/pay": "^2.0",
+        "php": ">=7.1.0"
+    },
+    "authors": [{
+        "name": "sunyonghong",
+        "email": "syh@sunyonghong.com"
+    }],
+    "minimum-stability": "dev",
+    "config": {
+        "sort-packages": true
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
+}
