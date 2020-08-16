@@ -3,6 +3,7 @@
     "description": "eduline-v5 第三方支付",
     "require": {
         "php": ">=7.1.0",
+        "topthink/framework": "^6.0.0",
         "yansongda/pay": "^2.0"
     },
     "license": "Apache-2.0",
@@ -17,6 +18,13 @@
     "autoload": {
         "psr-4": {
             "eduline\\payment\\": "src/"
+        }
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "eduline\\payment\\PaymentService"
+            ]       
         }
     }
 }
