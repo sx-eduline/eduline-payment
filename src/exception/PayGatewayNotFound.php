@@ -1,8 +1,8 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\payment\exception;
 
-use eduline\payment\exception\Exception;
 use think\facade\Env;
 
 /**
