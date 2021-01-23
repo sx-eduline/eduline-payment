@@ -1,8 +1,6 @@
 <?php
 
-
 namespace eduline\payment\gateways\applepay;
-
 
 use GuzzleHttp\Client;
 use eduline\payment\exception\PayGatewayVerifyError;
@@ -11,16 +9,19 @@ class ApplePayService
 {
     /**
      * 测试验证地址
+     *
      * @var string
      */
     private $sandboxUrl = 'https://sandbox.itunes.apple.com/verifyReceipt';
     /**
      * 正式验证地址
+     *
      * @var string
      */
     private $url = 'https://buy.itunes.apple.com/verifyReceipt';
     /**
      * 发送的数据
+     *
      * @var
      */
     private $data;
@@ -29,6 +30,7 @@ class ApplePayService
      * 验证
      * Author: Martinsun <syh@sunyonghong.com>
      * Date: 2020/9/29
+     *
      * @param $receipt_data
      * @return string
      * @throws PayGatewayVerifyError
@@ -65,6 +67,7 @@ class ApplePayService
      * 发送请求
      * Author: Martinsun <syh@sunyonghong.com>
      * Date: 2020/9/29
+     *
      * @param $url
      * @return string
      */
@@ -88,6 +91,7 @@ class ApplePayService
      * 获取验证请求地址
      * Author: Martinsun <syh@sunyonghong.com>
      * Date: 2020/9/29
+     *
      * @param bool $isSandbox
      * @return string
      */

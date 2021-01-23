@@ -38,6 +38,7 @@ class Pay implements PayInterface
      * init
      * Author: Martinsun <syh@sunyonghong.com>
      * Date: 2020/9/29
+     *
      * @return ApplePayService
      */
     public function init()

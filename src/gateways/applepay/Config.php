@@ -3,6 +3,7 @@ declare (strict_types=1);
 
 namespace eduline\payment\gateways\applepay;
 
+use app\admin\logic\system\all;
 use app\admin\logic\system\Config as SystemConfig;
 use app\common\logic\Attach;
 use eduline\admin\libs\pageform\FormItem;
@@ -25,9 +26,10 @@ class Config implements ConfigInterface
      * 获取配置
      * Author: Martinsun <syh@sunyonghong.com>
      * Date: 2020/9/29
+     *
      * @static
      * @param null $name
-     * @return \app\admin\logic\system\all|array|mixed|null
+     * @return all|array|mixed|null
      */
     public static function get($name = null)
     {

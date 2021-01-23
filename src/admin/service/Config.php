@@ -1,5 +1,6 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\payment\admin\service;
 
 use app\admin\logic\system\Config as SystemConfig;
@@ -13,8 +14,9 @@ class Config extends BaseService
 {
     /**
      * 支付网关列表
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-27
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-27
+     *
      * @return   [type]                         [description]
      */
     public function index()
@@ -48,8 +50,9 @@ class Config extends BaseService
 
     /**
      * 支付配置
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-27
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-27
+     *
      * @return   [type]                         [description]
      */
     public function config($gateway)
@@ -62,8 +65,9 @@ class Config extends BaseService
 
     /**
      * 改变支付状态
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-06-05
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-06-05
+     *
      * @param    [type]                         $gateway [description]
      * @return   [type]                                  [description]
      */
