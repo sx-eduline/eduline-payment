@@ -7,6 +7,7 @@ use app\admin\logic\system\Config as SystemConfig;
 use app\common\logic\Attach;
 use eduline\payment\exception\PayGatewayNotSupport;
 use eduline\payment\interfaces\PayInterface;
+use think\facade\App;
 use think\facade\Env;
 use Yansongda\Pay\Pay as PayGateway;
 
@@ -49,7 +50,7 @@ class Pay implements PayInterface
             'cert_client' => app(Attach::class)->where('id', Config::get('cert_client'))->findOrEmpty()->getAttr('filePath'), // optional，退款等情况时用到
             'cert_key'    => app(Attach::class)->where('id', Config::get('cert_key'))->findOrEmpty()->getAttr('filePath'), // optional，退款等情况时用到
             'log'         => [ // optional
-                'file'     => './logs/wxpay.log',
+                'file'     => App::getRuntimePath() . 'paylogs' . DIRECTORY_SEPARATOR . 'wxpay.log',
                 'level'    => Env::get('app_debug') ? 'debug' : 'info', // 建议生产环境等级调整为 info，开发环境为 debug
                 'type'     => 'single', // optional, 可选 daily.
                 'max_file' => 30, // optional, 当 type 为 daily 时有效，默认 30 天

@@ -6,6 +6,7 @@ namespace eduline\payment\gateways\alipay;
 use app\admin\logic\system\Config as SystemConfig;
 use eduline\payment\exception\PayGatewayNotSupport;
 use eduline\payment\interfaces\PayInterface;
+use think\facade\App;
 use think\facade\Env;
 use Yansongda\Pay\Pay as PayGateway;
 
@@ -44,7 +45,7 @@ class Pay implements PayInterface
             'ali_public_key'      => Config::getCrtPath(Config::get('alipay_cert_public_key')),
             'alipay_root_cert'    => Config::getCrtPath(Config::get('alipay_root_cert')),
             'log'                 => [ // optional
-                'file'     => './logs/alipay.log',
+                'file'     => App::getRuntimePath() . 'paylogs' . DIRECTORY_SEPARATOR . 'alipay.log',
                 'level'    => Env::get('app_debug') ? 'debug' : 'info', // 建议生产环境等级调整为 info，开发环境为 debug
                 'type'     => 'single', // optional, 可选 daily.
                 'max_file' => 30, // optional, 当 type 为 daily 时有效，默认 30 天
