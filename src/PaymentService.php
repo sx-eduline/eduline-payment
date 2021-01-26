@@ -1,4 +1,5 @@
 <?php
+
 namespace eduline\payment;
 
 use think\facade\Route;

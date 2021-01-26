@@ -3,7 +3,6 @@ declare (strict_types=1);
 
 namespace eduline\payment\exception;
 
-
 use think\facade\Env;
 
 class PayGatewayVerifyError extends Exception
@@ -20,6 +19,7 @@ class PayGatewayVerifyError extends Exception
 
     /**
      * 获取验证错误信息
+     *
      * @access public
      * @return array|string
      */

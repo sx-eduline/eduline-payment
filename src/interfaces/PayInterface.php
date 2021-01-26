@@ -1,4 +1,5 @@
 <?php
+
 namespace eduline\payment\interfaces;
 
 interface PayInterface
