@@ -75,7 +75,7 @@ class ApplePayService
     {
         $client = new Client();
         $result = $client->post($url, [
-            'form_params' => [
+            'json' => [
                 'receipt-data' => $this->data
             ]
         ]);
