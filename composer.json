@@ -4,7 +4,7 @@
   "require": {
     "php": ">=7.1.0",
     "topthink/framework": "^6.0.0",
-    "yansongda/pay": "2.10.5"
+    "yansongda/pay": "2.10.2"
   },
   "license": "Apache-2.0",
   "authors": [
