@@ -21,14 +21,15 @@ class Config extends BaseService
      */
     public function index()
     {
+        $mhm_id   = request()->mhm_id;
         $gateways = Gateways::getGateways();
-        $payment  = SystemConfig::get('system.package.payment');
+        $payment  = SystemConfig::get('system.package.payment', [], $mhm_id);
         // 查询配置
         foreach ($gateways as $key => $gateway) {
             // 储存配置key
             $__key                    = 'system.package.payment.' . $gateway['key'];
             $gateways[$key]['__key']  = $__key;
-            $gateways[$key]['config'] = SystemConfig::get($__key);
+            $gateways[$key]['config'] = SystemConfig::get($__key, [], $mhm_id);
             $gateways[$key]['status'] = in_array($gateway['key'], $payment) ? 1 : 0;
         }
         // 定义字段
