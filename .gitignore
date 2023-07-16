@@ -1,1 +1,12 @@
-﻿
+﻿.buildpath
+.settings/
+.project
+*.patch
+.idea/
+.git/
+codeCoverage/
+vendor/
+.phpintel/
+.DS_Store
+*.cache
+composer.lock

@@ -75,7 +75,7 @@ class Config extends BaseService
     public function changeStatus($gateway)
     {
         $key     = 'system.package.payment';
-        $payment = SystemConfig::get($key);
+        $payment = SystemConfig::get($key, [], request()->mhm_id);
         $status  = Request::post('status/d', 0);
 
         if ($status == 1 && !in_array($gateway, $payment)) {

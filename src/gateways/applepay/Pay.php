@@ -28,7 +28,7 @@ class Pay implements PayInterface
     public function __construct(array $config)
     {
         // 检测是否开启支付宝支付
-        $payment = SystemConfig::get('system.package.payment');
+        $payment = SystemConfig::get('system.package.payment', [], request()->mhm_id);
         if (!in_array('applepay', $payment)) {
             throw new PayGatewayNotSupport("暂不支持该支付方式");
         }
