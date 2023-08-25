@@ -13,7 +13,6 @@
       "email": "syh@sunyonghong.com"
     }
   ],
-  "minimum-stability": "dev",
   "config": {
     "sort-packages": true
   },
