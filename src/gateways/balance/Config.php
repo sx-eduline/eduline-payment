@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace eduline\payment\gateways\alipay;
+namespace eduline\payment\gateways\balance;
 
 use app\admin\logic\system\Config as SystemConfig;
 use eduline\admin\page\PageForm;
