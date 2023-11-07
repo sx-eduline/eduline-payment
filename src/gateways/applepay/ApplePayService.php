@@ -27,9 +27,7 @@ class ApplePayService
     private $data;
 
     /**
-     * 验证
-     * Author: Martinsun <syh@sunyonghong.com>
-     * Date: 2020/9/29
+     * 验证支付结果
      *
      * @param $receipt_data
      * @return string
