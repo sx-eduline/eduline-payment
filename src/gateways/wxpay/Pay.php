@@ -40,15 +40,14 @@ class Pay implements PayInterface
 
     public function getConfig(array $config)
     {
-
         return array_merge([
-            'appid'       => Config::get('appid'), // APP APPID
-            'app_id'      => Config::get('app_id'), // 公众号 APPID
-            'miniapp_id'  => Config::get('miniapp_id'), // 小程序 APPID
-            'mch_id'      => Config::get('mch_id'),
-            'key'         => Config::get('key'),
-            'cert_client' => app(Attach::class)->where('id', Config::get('cert_client'))->findOrEmpty()->getAttr('filePath'), // optional，退款等情况时用到
-            'cert_key'    => app(Attach::class)->where('id', Config::get('cert_key'))->findOrEmpty()->getAttr('filePath'), // optional，退款等情况时用到
+            'appid'       => Config::get('appid', $config['mhm']), // APP APPID
+            'app_id'      => Config::get('app_id', $config['mhm']), // 公众号 APPID
+            'miniapp_id'  => Config::get('miniapp_id', $config['mhm']), // 小程序 APPID
+            'mch_id'      => Config::get('mch_id', $config['mhm']),
+            'key'         => Config::get('key', $config['mhm']),
+            'cert_client' => app(Attach::class)->where('id', Config::get('cert_client', $config['mhm']))->findOrEmpty()->getAttr('filePath'), // optional，退款等情况时用到
+            'cert_key'    => app(Attach::class)->where('id', Config::get('cert_key', $config['mhm']))->findOrEmpty()->getAttr('filePath'), // optional，退款等情况时用到
             'log'         => [ // optional
                 'file'     => App::getRuntimePath() . 'paylogs' . DIRECTORY_SEPARATOR . 'wxpay.log',
                 'level'    => Env::get('app_debug') ? 'debug' : 'info', // 建议生产环境等级调整为 info，开发环境为 debug

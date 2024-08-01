@@ -39,11 +39,11 @@ class Pay implements PayInterface
     public function getConfig(array $config)
     {
         return array_merge([
-            'app_id'              => Config::get('app_id'),
-            'private_key'         => Config::get('private_key'),
-            'app_cert_public_key' => Config::getCrtPath(Config::get('app_cert_public_key')),
-            'ali_public_key'      => Config::getCrtPath(Config::get('alipay_cert_public_key')),
-            'alipay_root_cert'    => Config::getCrtPath(Config::get('alipay_root_cert')),
+            'app_id'              => Config::get('app_id', $config['mhm']),
+            'private_key'         => Config::get('private_key', $config['mhm']),
+            'app_cert_public_key' => Config::getCrtPath(Config::get('app_cert_public_key', $config['mhm'])),
+            'ali_public_key'      => Config::getCrtPath(Config::get('alipay_cert_public_key', $config['mhm'])),
+            'alipay_root_cert'    => Config::getCrtPath(Config::get('alipay_root_cert', $config['mhm'])),
             'log'                 => [ // optional
                 'file'     => App::getRuntimePath() . 'paylogs' . DIRECTORY_SEPARATOR . 'alipay.log',
                 'level'    => Env::get('app_debug') ? 'debug' : 'info', // 建议生产环境等级调整为 info，开发环境为 debug
