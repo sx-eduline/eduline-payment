@@ -4,12 +4,23 @@ declare (strict_types=1);
 namespace eduline\payment\gateways\applepay;
 
 use app\admin\logic\system\Config as SystemConfig;
+use app\common\logic\Attach;
 use eduline\payment\exception\PayGatewayNotSupport;
 use eduline\payment\interfaces\PayInterface;
+use think\facade\Env;
+use Yansongda\Pay\Pay as PayGateway;
 
 /**
- * 苹果支付 - 支付类
- * @method object|string|void verify($receipt_data)
+ * 微信支付 - 支付类
+ * @method Response app() APP 支付
+ * @method Collection groupRedpack() 分裂红包
+ * @method Collection miniapp() 小程序支付
+ * @method Collection mp() 公众号支付
+ * @method Collection pos() 刷卡支付
+ * @method Collection redpack() 普通红包
+ * @method Collection scan() 扫码支付
+ * @method Collection transfer() 企业付款
+ * @method Response wap() H5 支付
  */
 class Pay implements PayInterface
 {
